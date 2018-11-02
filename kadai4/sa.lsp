@@ -1,0 +1,8 @@
+(defun sa (x y)
+  (cond ((and (equal x nil) (equal y nil)) nil)
+        ((equal x nil) y)
+        ((equal y nil) x)
+        ((equal nil (mem (car y) x)) (append (sa x (cdr y)) (list (car y))))
+        (t (sa (rm (car y) x) (cdr y)))
+  )
+)

@@ -1,0 +1,5 @@
+(defun seki (x y)
+  (cond ((or (equal x nil) (equal y nil)) nil)
+        ((not (equal (mem (car x) y) nil)) (cons (car (mem (car x) y)) (seki (cdr x) y)))
+        (t (seki (cdr x) y)))
+)
