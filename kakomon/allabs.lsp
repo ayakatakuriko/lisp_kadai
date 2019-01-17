@@ -1,0 +1,6 @@
+(defun allabs (x)
+  (cond 	((equal x nil) nil)
+   ((listp x) (cons (allabs (car x)) (allabs (cdr x))))
+		((and (numberp x) (< x 0)) (* x -1))
+		(t x))
+)

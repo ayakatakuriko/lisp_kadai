@@ -1,0 +1,5 @@
+(defun myfindif (func x)
+  (cond ((equal x nil) nil)
+        ((funcall func (car x)) (car x))
+		(t (myfindif func (cdr x)))
+		))
